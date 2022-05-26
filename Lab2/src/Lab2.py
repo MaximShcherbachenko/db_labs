@@ -268,53 +268,53 @@ if __name__ == '__main__':
     conn, cur = db_connection()
     print("Database connected.")
 
-    # print('Student (21) table status:\n')
-    # time_set_21 = process_csv_and_save_in_db(['OUTID', 'Birth', 'SexTypeName', 'RegName', 'TERNAME'], 'student',
-    #                                          'student_additional_21', 'Odata2021File.csv', 'utf-8-sig')
-    #
-    # with open('time.txt', 'a+') as f:
-    #     f.write('Students (21) set lead time - {}\n'.format(time_set_21))
-    #
-    # print('Student (19) table status:\n')
-    # time_set_19 = process_csv_and_save_in_db(['OUTID', 'Birth', 'SEXTYPENAME', 'REGNAME', 'TERNAME'], 'student',
-    #                                          'student_additional_19', 'Odata2019File.csv', 'cp1251')
-    # with open('time.txt', 'a+') as f:
-    #     f.write('Students (19) set lead time - {}\n'.format(time_set_19))
-    #
-    # print('Results (21) table status:\n')
-    # time_set_21 = process_csv_and_save_in_db(['OUTID', 'MathTest', 'MathTestStatus', 'MathBall100'], 'result',
-    #                                          'result_additional_21', 'Odata2021File.csv', 'utf-8-sig')
-    # with open('time.txt', 'a+') as f:
-    #     f.write('Result (21) set lead time - {}\n'.format(time_set_21))
-    #
-    # print('Results (19) table status:\n')
-    # time_set_19 = process_csv_and_save_in_db(['OUTID', 'mathTest', 'mathTestStatus', 'mathBall100'], 'result',
-    #                                          'result_additional_19', 'Odata2019File.csv', 'cp1251')
-    # with open('time.txt', 'a+') as f:
-    #     f.write('Result (19) set lead time - {}\n'.format(time_set_19))
-    #
-    # print('Year (21) table status:\n')
-    # time_set_21 = process_csv_and_save_in_db_for_year(['OUTID'], 'year',
-    #                                                   'year_additional_21', 'Odata2021File.csv', 'utf-8-sig', 2021)
-    # with open('time.txt', 'a+') as f:
-    #     f.write('Result (21) set lead time - {}\n'.format(time_set_21))
-    #
-    # print('Year (19) table status:\n')
-    # time_set_19 = process_csv_and_save_in_db_for_year(['OUTID'], 'year',
-    #                                                   'year_additional_19', 'Odata2019File.csv', 'cp1251', 2019)
-    # with open('time.txt', 'a+') as f:
-    #     f.write('Result (19) set lead time - {}\n'.format(time_set_19))
+    print('Student (21) table status:\n')
+    time_set_21 = process_csv_and_save_in_db(['OUTID', 'Birth', 'SexTypeName', 'RegName', 'TERNAME'], 'student',
+                                             'student_additional_21', 'Odata2021File.csv', 'utf-8-sig')
+    
+    with open('time.txt', 'a+') as f:
+        f.write('Students (21) set lead time - {}\n'.format(time_set_21))
+    
+    print('Student (19) table status:\n')
+    time_set_19 = process_csv_and_save_in_db(['OUTID', 'Birth', 'SEXTYPENAME', 'REGNAME', 'TERNAME'], 'student',
+                                             'student_additional_19', 'Odata2019File.csv', 'cp1251')
+    with open('time.txt', 'a+') as f:
+        f.write('Students (19) set lead time - {}\n'.format(time_set_19))
+    
+    print('Results (21) table status:\n')
+    time_set_21 = process_csv_and_save_in_db(['OUTID', 'MathTest', 'MathTestStatus', 'MathBall100'], 'result',
+                                             'result_additional_21', 'Odata2021File.csv', 'utf-8-sig')
+    with open('time.txt', 'a+') as f:
+        f.write('Result (21) set lead time - {}\n'.format(time_set_21))
+    
+    print('Results (19) table status:\n')
+    time_set_19 = process_csv_and_save_in_db(['OUTID', 'mathTest', 'mathTestStatus', 'mathBall100'], 'result',
+                                             'result_additional_19', 'Odata2019File.csv', 'cp1251')
+    with open('time.txt', 'a+') as f:
+        f.write('Result (19) set lead time - {}\n'.format(time_set_19))
+    
+    print('Year (21) table status:\n')
+    time_set_21 = process_csv_and_save_in_db_for_year(['OUTID'], 'year',
+                                                      'year_additional_21', 'Odata2021File.csv', 'utf-8-sig', 2021)
+    with open('time.txt', 'a+') as f:
+        f.write('Result (21) set lead time - {}\n'.format(time_set_21))
+    
+    print('Year (19) table status:\n')
+    time_set_19 = process_csv_and_save_in_db_for_year(['OUTID'], 'year',
+                                                      'year_additional_19', 'Odata2019File.csv', 'cp1251', 2019)
+    with open('time.txt', 'a+') as f:
+        f.write('Result (19) set lead time - {}\n'.format(time_set_19))
 
-    for idx, tablename in enumerate(TABLES):
-        os.system(f'pg_dump --column-inserts --data-only --table={tablename} '
-                  f'-h localhost -p 5432 -U admin -F p db_postgres_lab2 > flyway/sql/V2.{idx + 1}__insert_into_{tablename}.sql')
-    # cur.execute(query)
-    # with open('zno_results.csv', 'a+', newline='', encoding='utf8') as file:
-    #     writer = csv.writer(file, delimiter=';')
-    #     writer.writerow([hdr[0] for hdr in cur.description])
-    #
-    #     for row in cur:
-    #         writer.writerow([str(item) for item in row])
+#     for idx, tablename in enumerate(TABLES):
+#         os.system(f'pg_dump --column-inserts --data-only --table={tablename} '
+#                   f'-h localhost -p 5432 -U admin -F p db_postgres_lab2 > flyway/sql/V2.{idx + 1}__insert_into_{tablename}.sql')
+    cur.execute(query)
+    with open('zno_results.csv', 'a+', newline='', encoding='utf8') as file:
+        writer = csv.writer(file, delimiter=';')
+        writer.writerow([hdr[0] for hdr in cur.description])
+    
+        for row in cur:
+            writer.writerow([str(item) for item in row])
     cur.close()
     conn.close()
     print(time.time() - start_time)
