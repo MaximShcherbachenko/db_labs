@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Main page
+{% endblock %}
+
+{% block body %}
+
+    <div class="row d-flex justify-content-center py-3 mt-auto">
+
+
+        <div class="col-lg-6">
+
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="card-title m-b-0">Welcome to Lab 3 :)</h4>
+                </div>
+                <ul class="list-style-none">
+                    <li class="d-flex no-block card-body">
+                        <i class="fa fa-check-circle w-30px m-t-5"></i>
+                        <div>
+                            <a href="/posts" class="m-b-0 font-medium p-0 nav-link" data-abc="true">New movies</a>
+                            <span class="text-muted">Check all new movies! </span>
+                        </div>
+                    </li>
+                    <li class="d-flex no-block card-body border-top">
+                        <i class="fa fa-check-circle w-30px m-t-5"></i>
+                        <div>
+                            <a href="/about" class="m-b-0 font-medium p-0 nav-link" data-abc="true">About page</a>
+                            <span class="text-muted">Read some information about project. </span>
+                        </div>
+                    </li>
+                    <li class="d-flex no-block card-body border-top">
+                        <i class="fa fa-check-circle w-30px m-t-5"></i>
+                        <div>
+                            <a href="/create" class="m-b-0 font-medium p-0 nav-link" data-abc="true">Upload your movie page</a>
+                            <span class="text-muted">Create new article by your own!. </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

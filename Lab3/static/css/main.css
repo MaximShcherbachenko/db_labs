@@ -1,0 +1,80 @@
+@import url(http://fonts.googleapis.com/css?family=Calibri:400,300,700);
+
+body {
+    font-family: 'Calibri', sans-serif !important
+}
+
+.hdr{
+    background-color: #202136;
+}
+
+.ftr {
+    background-color: #202136;
+    color: #F7F8FC;
+}
+
+.hdr-text{
+    color: #F7F8FC;
+}
+.row{
+    background-color: #F7F8FC;
+    margin-right: 0px!important;
+}
+
+
+.mb-100 {
+    margin-bottom: 100px;
+}
+
+.card {
+    background-color: #545365;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 0px solid transparent;
+    border-radius: 0px;
+}
+
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card .card-title {
+    position: relative;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+ul.list-style-none li {
+    list-style: none;
+}
+
+ul.list-style-none li a {
+    color: #202136;
+    padding: 8px 0px;
+    display: block;
+    text-decoration: none;
+}
+
+.m-t-5 {
+    margin-top: 5px;
+}
+
+.w-30px {
+    width: 30px;
+}
+
+h1 {
+    text-align: center;
+}

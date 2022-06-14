@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ movie.title }}
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1>{{ movie.title }}</h1>
+        <h3>{{ movie.intro }}</h3>
+
+        <div class="alert alert-info">
+            <img src="data:;base64, {{ image }}"/>
+            <p>{{ movie.text }}</p>
+            <p><b>Date: {{ movie.date.date() }}</b></p>
+            <a href="/posts/{{ movie.id }}/delete" class="btn btn-danger">Delete</a>
+            <a href="/posts/{{ movie.id }}/update" class="btn btn-success">Update</a>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2>Comments</h2>
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Write your comment</label>
+                <input type="text" class="form-control" id="text" name="text" placeholder="Write your comment">
+            </div>
+            <input type="submit" class="btn btn-success" value="Send">
+            {% for el in movie.comments %}
+                    <div class="alert alert-info">
+                        <p>{{ el.text }}</p>
+                        <p><b>Date: {{ el.date.date() }}</b></p>
+                        <a href="/posts/{{ el.movie_id }}/comments/{{ el.id }}/delete" class="btn btn-danger">Delete</a>
+                        <a href="/posts/{{ el.movie_id }}/comments/{{ el.id }}/update" class="btn btn-success">Update</a>
+                    </div>
+            {% endfor %}
+        </form>
+    </div>
+
+{% endblock %}

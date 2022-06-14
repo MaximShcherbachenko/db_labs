@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Movie update
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Post update</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label class="form-label">Movie name</label>
+          <input type="text" class="form-control" id="title" name="title" value="{{ movie.title }}" placeholder="Article name">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Intro</label>
+          <input type="text" class="form-control" id="intro" name="intro" value="{{ movie.intro }}" placeholder="Intro">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Text</label>
+          <input type="text" class="form-control" id="text" name="text" value="{{ movie.text }}" placeholder="Text">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Image</label><br>
+          <button><input type='file' name='image' id='image' value="{{ movie.image }}" multiple></button><br>
+        </div>
+        <input type="submit" class="btn btn-success" value="Update">
+    </form>
+</div>
+
+{% endblock %}

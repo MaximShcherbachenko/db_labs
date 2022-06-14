@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Upload your movie</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label class="form-label">Movie name</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="Movie name">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Intro</label>
+          <input type="text" class="form-control" id="intro" name="intro" placeholder="Intro">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Text</label>
+          <input type="text" class="form-control" id="text" name="text" placeholder="Text">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Image</label><br>
+          <button><input type='file' id='image' name="image" multiple></button><br>
+        </div>
+        <input type="submit" class="btn btn-success" value="Send">
+    </form>
+</div>
+
+{% endblock %}
